@@ -73,3 +73,4 @@ while((movimientos<=9)or(ganador == 0)):
     elif((a[0][2]=="0")and(a[1][1]=="0")and(a[2][0]=="0")):
         print("GANASTE!!!!!!")
         ganador = 1
+        print("Hola")
