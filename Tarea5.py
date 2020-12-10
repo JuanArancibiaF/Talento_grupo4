@@ -49,7 +49,6 @@ while((movimientos<=5)or(ganador == 0)):
         print("GANASTE!!!!!!")
         ganador = 1
 
-
     #Evaluacion de Y
     if((a[0][0]=="0")and(a[0][1]=="0")and(a[0][2]=="0")):
         print("PERDEDOR!!!!!")
@@ -87,5 +86,3 @@ while((movimientos<=5)or(ganador == 0)):
         else:
             print ("Gracias por jugar")
             break
-        
-        
