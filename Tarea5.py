@@ -12,15 +12,15 @@ while((movimientos<=5)or(ganador == 0)):
     coordenada_y = int(input("Ingrese fila: "))
     if (a[coordenada_x][coordenada_y]==""):
         a[coordenada_x][coordenada_y]="X"
-    coordenada_x = random.randint(0,2)
-    coordenada_y = random.randint(0,2)
+        coordenada_x = random.randint(0,2)
+        coordenada_y = random.randint(0,2)
     while(a[coordenada_x][coordenada_y]!=""):
         coordenada_x = random.randint(0,2)
         coordenada_y = random.randint(0,2)
     a[coordenada_x][coordenada_y]="0"
     for i in range (0,3):
         print(a[i])
-    movimientos = movimientos + 1
+        movimientos = movimientos + 1
     
     #Evaluacion de X
     x="X"
