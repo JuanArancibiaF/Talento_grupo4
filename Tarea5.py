@@ -4,9 +4,10 @@ for i in range (0,3):
     print(a[i])
 movimientos = 0
 ganador = 0
-print("Usted es el X")
+bandera = 0
+print("Hola! Este es el juego del Gato. Usted es el X")
 
-while((movimientos<=9)or(ganador == 0)):
+while((movimientos<=5)or(ganador == 0)):
     coordenada_x = int(input("Ingrese columna: "))
     coordenada_y = int(input("Ingrese fila: "))
     if (a[coordenada_x][coordenada_y]==""):
@@ -43,11 +44,12 @@ while((movimientos<=9)or(ganador == 0)):
         ganador = 1
     elif((a[0][0]==x)and(a[1][1]==x)and(a[2][2]==x)):
         print("GANASTE!!!!!!")
-        ganador = 1   
+        ganador = 1
     elif((a[0][2]==x)and(a[1][1]==x)and(a[2][0]==x)):
         print("GANASTE!!!!!!")
         ganador = 1
-        
+
+
     #Evaluacion de Y
     if((a[0][0]=="0")and(a[0][1]=="0")and(a[0][2]=="0")):
         print("PERDEDOR!!!!!")
@@ -68,9 +70,22 @@ while((movimientos<=9)or(ganador == 0)):
         print("PERDEDOR!!!!!")
         ganador = 1
     elif((a[0][0]=="0")and(a[1][1]=="0")and(a[2][2]=="0")):
-        print("GANASTE!!!!!!")
-        ganador = 1   
-    elif((a[0][2]=="0")and(a[1][1]=="0")and(a[2][0]=="0")):
-        print("GANASTE!!!!!!")
+        print("PERDEDOR!!!!!!")
         ganador = 1
-        print("Hola")
+    elif((a[0][2]=="0")and(a[1][1]=="0")and(a[2][0]=="0")):
+        print("PERDEDOR!!!!!!")
+        ganador = 1
+
+
+    if ganador == 1:
+        bandera = input("Desea seguir jugando? s/n")
+        bandera.lower()
+        if bandera == "s":
+            a = [["","",""],["","",""],["","",""]]
+            for i in range (0,3):
+                print(a[i])
+        else:
+            print ("Gracias por jugar")
+            break
+        
+        
