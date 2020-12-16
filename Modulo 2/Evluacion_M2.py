@@ -9,6 +9,8 @@ number_keys = {
     "unidad" : 0   
     }
 
+lista_numeros_ingresados = [ ]
+
 def numero_a_diccionario(numero):
     largo = len(str(numero))
     for i in str(numero):
@@ -44,8 +46,14 @@ def graficar():
     print(" 100.000   10.000   1.000     100      10        1")
 
 
+iniciar = "s"
 print("bienvenidos")
 num = int(input("Ingrese un numero de hasta 6 digitos: "))
 numero_a_diccionario(num)
 graficar()
+lista_numeros_ingresados.append(num)
 print("fin")
+print(lista_numeros_ingresados)
+print ("variable inicio", iniciar)
+
+
