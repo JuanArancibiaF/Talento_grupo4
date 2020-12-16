@@ -1,13 +1,14 @@
 import decimal
 
 number_keys = {
-    "unidad_cien_mil" : 0,
-    "unidad_diez_mil" : 0,
-    "unidad_mil" : 0, 
-    "centena" : 0,
-    "decena" : 0,
-    "unidad" : 0   
-    }
+    "unidad_cien_mil": 0,
+    "unidad_diez_mil": 0,
+    "unidad_mil": 0,
+    "centena": 0,
+    "decena": 0,
+    "unidad": 0
+}
+
 
 def numero_a_diccionario(numero):
     largo = len(str(numero))
@@ -29,48 +30,53 @@ def numero_a_diccionario(numero):
 
 def graficar(lista_numeros_ingresados):
     contador = 11
-    for i in range(0,12):
-        #for j in range(0,6):
+    for i in range(0, 12):
+        # for j in range(0,6):
         for j in number_keys:
-            if(i==0)or(i==11):
+            if(i == 0) or (i == 11):
                 print("   +-+   ", end="")
-            elif(((number_keys[j])-contador)==0):
+            elif(((number_keys[j])-contador) == 0):
                 print("  XXXXX  ", end="")
-                number_keys[j]=number_keys[j]-1
+                number_keys[j] = number_keys[j]-1
             else:
                 print("   | |   ", end="")
-        contador = contador -1
+        contador = contador - 1
         print("")
     print(" 100.000   10.000   1.000     100      10        1")
-
     consulta_fin(lista_numeros_ingresados)
 
+
 def consulta_fin(lista_numeros_ingresados):
-    consulta = str(input("¿Desea seguir jugando? S/N:"))    
+    consulta = str(input("¿Desea seguir jugando? S/N:"))
 
     if(consulta.lower() == 'salir' or consulta.lower() == 'n'):
         for i in lista_numeros_ingresados:
             print(i)
-        print('fin de la ejecucion')
-    elif( consulta.lower() == 's'):
+        print("""*****************************************
+        *   fin de la ejecucion   *
+        *****************************************""")
+    elif(consulta.lower() == 's'):
         inicio(lista_numeros_ingresados)
     else:
         print("respuesta invalida, vuelva a intentarlo")
         consulta_fin(lista_numeros_ingresados)
-   
 
 
-def inicio (lista_numeros_ingresados):
-    
+def inicio(lista_numeros_ingresados):
+
     num = int(input("Ingrese un numero de hasta 6 digitos: "))
 
-    lista_numeros_ingresados.append(num)
-    for i in lista_numeros_ingresados:
-        print("numero_69:", i)
-    numero_a_diccionario(num)
-    graficar(lista_numeros_ingresados)
+    if len(str(num)) > 6:
+        print("El numero excede el largo máximo de 6 dígitos. ¡Intentalo de nuevo!")
+        inicio(lista_numeros_ingresados)
+    else:
+        lista_numeros_ingresados.append(num)
+        numero_a_diccionario(num)
+        graficar(lista_numeros_ingresados)
 
 
-print("bienvenidos")
+print("""*****************************************
+*   Bienvenidos al ABACO   *
+*****************************************""")
 lista_numeros_ingresados = []
 inicio(lista_numeros_ingresados)
